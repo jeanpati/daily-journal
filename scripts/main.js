@@ -1,3 +1,5 @@
+import { entryList } from "./entry-list.js";
+
 const contentTarget = document.querySelector(".main");
 
 const renderHTML = () => {
@@ -26,7 +28,7 @@ const renderHTML = () => {
     </form>
 
     
-    <article id="entries"></article>
+    <article id="entries">${entryList()}</article>
     </section>`;
 };
 
