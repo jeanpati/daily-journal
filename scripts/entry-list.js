@@ -1,8 +1,10 @@
 import { getJournalEntries } from "./database.js";
 
-let entryHTML = "";
-export const entryList = () => {
-  const allEntries = getJournalEntries();
+export const entryList = async () => {
+  let entryHTML = "";
+  const allEntries = await getJournalEntries();
+  console.log(allEntries);
+
   allEntries.forEach((entry) => {
     entryHTML += `
       <section class="journalEntry">
