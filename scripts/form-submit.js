@@ -4,25 +4,21 @@ import { setBody, setDate, setMood, setTitle } from "./transient-state.js";
 const handleDateChoice = (changeEvent) => {
   if (changeEvent.target.name === "entryDate") {
     setDate(changeEvent.target.value);
-    console.log(changeEvent.target.value);
   }
 };
 const handleTitleChoice = (changeEvent) => {
   if (changeEvent.target.name === "entryTitle") {
     setTitle(changeEvent.target.value);
-    console.log(changeEvent.target.value);
   }
 };
 const handleBodyChoice = (changeEvent) => {
   if (changeEvent.target.name === "entryBody") {
     setBody(changeEvent.target.value);
-    console.log(changeEvent.target.value);
   }
 };
 const handleMoodChoice = (changeEvent) => {
   if (changeEvent.target.name === "entryMood") {
     setMood(changeEvent.target.value);
-    console.log(changeEvent.target.value);
   }
 };
 
