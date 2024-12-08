@@ -1,5 +1,5 @@
 export const getJournalEntries = () => {
-  return fetch("http://localhost:8088/entries") // Fetch from the API
+  return fetch("http://localhost:8088/entries?_embed=mood") // Fetch from the API
     .then((res) => res.json()) // Parse as JSON
     .then((entries) => {
       return entries;
@@ -22,5 +22,13 @@ export const saveJournalEntry = async (newEntry) => {
       //  Broadcast the state change event
       const event = new CustomEvent("entrySaved");
       window.dispatchEvent(event);
+    });
+};
+
+export const getMoods = () => {
+  return fetch("http://localhost:8088/moods") // Fetch from the API
+    .then((res) => res.json()) // Parse as JSON
+    .then((moods) => {
+      return moods;
     });
 };

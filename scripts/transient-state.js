@@ -2,7 +2,7 @@ const transientState = {
   date: "",
   title: "",
   body: "",
-  mood: "",
+  moodId: 0,
 };
 
 export const setDate = (chosenDate) => {
@@ -18,7 +18,7 @@ export const setBody = (chosenBody) => {
   console.log(transientState);
 };
 export const setMood = (chosenMood) => {
-  transientState.mood = chosenMood;
+  transientState.moodId = chosenMood;
   console.log(transientState);
 };
 
