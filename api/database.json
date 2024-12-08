@@ -5,35 +5,50 @@
       "date": "07/24/2025",
       "title": "HTML & CSS",
       "body": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "mood": "Ok"
+      "moodId": "1"
     },
     {
       "id": "2",
       "date": "08/01/2025",
       "title": "JavaScript Basics",
       "body": "Learned about variables, functions, and event listeners. Practiced with DOM manipulation.",
-      "mood": "Good"
+      "moodId": "2"
     },
     {
       "id": "3",
       "date": "08/15/2025",
       "title": "JavaScript Promises",
       "body": "Explored promises, asynchronous programming, and how they work with async/await in JS.",
-      "mood": "Excited"
+      "moodId": "3"
     },
     {
-      "id": "ebf6",
-      "date": "02/02/2013",
-      "title": "happy today",
-      "body": "happy",
-      "mood": "happy"
-    },
-    {
-      "id": "184a",
+      "id": "1f14",
       "date": "2024-12-07",
       "title": "test",
-      "body": "d",
-      "mood": "good"
+      "body": "r",
+      "moodId": "3"
+    }
+  ],
+  "moods": [
+    {
+      "id": "1",
+      "label": "Good"
+    },
+    {
+      "id": "2",
+      "label": "Sad"
+    },
+    {
+      "id": "3",
+      "label": "Mad"
+    },
+    {
+      "id": "4",
+      "label": "OK"
+    },
+    {
+      "id": "5",
+      "label": "Happy"
     }
   ]
 }

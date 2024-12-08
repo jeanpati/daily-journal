@@ -1,5 +1,13 @@
-export const form = () => {
+import { getMoods } from "./database.js";
+
+export const form = async () => {
   let formHTML = "";
+  const allMoods = await getMoods();
+  let optionsHTML = "";
+  allMoods.forEach((mood) => {
+    optionsHTML += `<option value=${mood.id}>${mood.label}</option>`;
+  });
+
   formHTML += `<form class="entryForm">
       <fieldset class="formField">
         <label for="entryDate">Date</label>
@@ -17,9 +25,7 @@ export const form = () => {
         <label for="entryMood">Mood</label>
         <select name="entryMood" id="entryMood" class="entryForm__mood">
         <option value="" disabled selected>Select your mood</option>
-        <option>good</option>
-        <option>ok</option>
-        <option>bad</option>
+        ${optionsHTML}
         </select>
       </fieldset>
       <button type="button" id="submitEntry" class="submitEntry">Submit</button>
