@@ -1,10 +1,5 @@
-import {
-  setBody,
-  setDate,
-  setMood,
-  setTitle,
-  postEntry,
-} from "./transient-state.js";
+import { postEntry } from "./database.js";
+import { setBody, setDate, setMood, setTitle } from "./transient-state.js";
 
 const handleDateChoice = (changeEvent) => {
   if (changeEvent.target.name === "entryDate") {

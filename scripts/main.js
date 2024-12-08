@@ -1,4 +1,4 @@
-import { entryList } from "./entry-list.js";
+import { addDeleteListener, entryList } from "./entry-list.js";
 import { addInputListeners, addSubmitListener } from "./form-submit.js";
 import { form } from "./form.js";
 
@@ -14,11 +14,16 @@ const renderHTML = async () => {
     </section>`;
   addInputListeners();
   addSubmitListener();
+  addDeleteListener();
 };
 
 renderHTML();
 
 document.addEventListener("newEntry", (event) => {
+  console.log("State of data has changed. Regenerating HTML...");
+  renderHTML();
+});
+document.addEventListener("deletedEntry", (event) => {
   console.log("State of data has changed. Regenerating HTML...");
   renderHTML();
 });
