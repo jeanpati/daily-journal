@@ -1,16 +1,24 @@
 import { entryList } from "./entry-list.js";
+import { addInputListeners, addSubmitListener } from "./form-submit.js";
 import { form } from "./form.js";
 
 const contentTarget = document.querySelector(".main");
 
-const entriesHTML = await entryList();
-
-const renderHTML = () => {
-  contentTarget.innerHTML = `<section class="main-content">
-    <article id="form">${form()}</article>
-    
-    <article id="entries">${entriesHTML}</article>
+const renderHTML = async () => {
+  const renderForm = await form();
+  const renderEntries = await entryList();
+  contentTarget.innerHTML = `
+     <section class="main-content">
+        <article id="form">${renderForm}</article>
+        <article id="entries">${renderEntries}</article>
     </section>`;
+  addInputListeners();
+  addSubmitListener();
 };
 
 renderHTML();
+
+document.addEventListener("newEntry", (event) => {
+  console.log("State of data has changed. Regenerating HTML...");
+  renderHTML();
+});
